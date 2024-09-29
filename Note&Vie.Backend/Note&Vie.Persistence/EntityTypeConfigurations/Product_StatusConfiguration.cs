@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Note_Vie.Persistence.EntityTypeConfigurations
 {
-    public class Product_SrarusConfiguration : IEntityTypeConfiguration<Product_Status>
+    public class Product_StatusConfiguration : IEntityTypeConfiguration<Product_Status>
     {
         public void Configure(EntityTypeBuilder<Product_Status> builder)
         {
