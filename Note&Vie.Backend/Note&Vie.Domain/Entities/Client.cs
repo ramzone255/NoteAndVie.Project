@@ -15,7 +15,8 @@ namespace Note_Vie.Domain.Entities
         public string client_name { get; set; }
         public string client_mail {  get; set; }
         [ForeignKey("Client_Type")]
-        public Client_Type Client_Type { get; set; }
         public int id_client_type { get; set; }
+        public Client_Type Client_Type { get; set; }
+        
     }
 }

@@ -13,13 +13,13 @@ namespace Note_Vie.Domain.Entities
         [Key]
         public int id_receipt {  get; set; }
         [ForeignKey("Client")]
-        public Client Client { get; set; }
         public int id_client { get; set; }
+        public Client Client { get; set; }
         [ForeignKey("Employees")]
-        public Employees Employees { get; set; }
         public int id_employees { get; set; }
+        public Employees Employees { get; set; }
         [ForeignKey("Product")]
-        public Product Product { get; set; }
         public int id_product { get; set; }
+        public Product Product { get; set; }
     }
 }

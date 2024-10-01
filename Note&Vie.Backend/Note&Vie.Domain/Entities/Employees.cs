@@ -16,7 +16,7 @@ namespace Note_Vie.Domain.Entities
         public string login {  get; set; }
         public string password { get; set; }
         [ForeignKey("Post")]
-        public Post Post { get; set; }
         public int id_post { get; set; }
+        public Post Post { get; set; }
     }
 }

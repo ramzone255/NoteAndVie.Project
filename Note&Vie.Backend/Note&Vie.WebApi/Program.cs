@@ -7,7 +7,7 @@ using Note_Vie.Persistence.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddPersistence(builder.Configuration);
 
 using (var scope = builder.Services.BuildServiceProvider().CreateScope())
 {

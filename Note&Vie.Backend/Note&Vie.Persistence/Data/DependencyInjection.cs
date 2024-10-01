@@ -15,11 +15,9 @@ namespace Note_Vie.Persistence.Data
         public static IServiceCollection AddPersistence(this IServiceCollection
             services, IConfiguration configuration)
         {
-            var connectionString = configuration["DbConnection"];
             services.AddDbContext<Note_VieDbContext>(options =>
-            {
-                options.UseSqlServer(connectionString);
-            });
+            options.UseSqlServer(configuration.GetConnectionString("ConnectionDbString"),
+            b => b.MigrationsAssembly(typeof(Note_VieDbContext).Assembly.FullName)), ServiceLifetime.Transient);
             services.AddScoped<INote_VieDbContext>(provider =>
             provider.GetService<Note_VieDbContext>());
             return services;

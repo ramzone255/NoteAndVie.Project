@@ -17,10 +17,10 @@ namespace Note_Vie.Domain.Entities
         public double product_price { get; set; }
         public string? product_image { get; set; }
         [ForeignKey("Product_Status")]
-        public Product_Status Product_Status { get; set; }
         public int id_product_status { get; set; }
+        public Product_Status Product_Status { get; set; }
         [ForeignKey("Product_Type")]
-        public Product_Type Product_Type { get; set; }
         public int id_product_type { get; set; }
+        public Product_Type Product_Type { get; set; }
     }
 }
