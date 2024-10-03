@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Note_Vie.Application.Entities.Product_Status.Commands.CreateProduct_Status;
 using Note_Vie.Application.Entities.Product_Status.Commands.DeleteProduct_Status;
