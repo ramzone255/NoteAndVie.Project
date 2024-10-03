@@ -6,6 +6,7 @@ using Note_Vie.Application.Entities.Product_Status.Commands.UpdateProduct_Status
 using Note_Vie.Application.Entities.Product_Status.Queries.GetProduct_StatusDetails;
 using Note_Vie.Application.Entities.Product_Status.Queries.GetProduct_StatusList;
 using Note_Vie.WebApi.src.EntitiesDto.Product_StatusDto;
+using System.Collections.Immutable;
 
 namespace Note_Vie.WebApi.src.Controllers
 {
@@ -21,7 +22,7 @@ namespace Note_Vie.WebApi.src.Controllers
         {
             var query = new GetProduct_StatusListQuery
             {
-                 
+                 id_product_status = 0
             };
             var vm = await Mediator.Send(query);
             return Ok(vm);

@@ -23,7 +23,7 @@ namespace Note_Vie.Application.Entities.Product_Type.Queries.GetProduct_TypeList
             CancellationToken cancellationToken)
         {
             var notesQuery = await _dbContext.Product_Type
-                .Where(note => note.id_product_type == request.id_product_type)
+                .Where(note => note.id_product_type != request.id_product_type)
                 .ProjectTo<Product_TypeLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

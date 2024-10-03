@@ -23,7 +23,7 @@ namespace Note_Vie.Application.Entities.Product_Status.Queries.GetProduct_Status
             CancellationToken cancellationToken)
         {
             var notesQuery = await _dbContext.Product_Status
-                .Where(note => note.id_product_status == request.id_product_status)
+                .Where(note => note.id_product_status != request.id_product_status)
                 .ProjectTo<Product_StatusLookupDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
