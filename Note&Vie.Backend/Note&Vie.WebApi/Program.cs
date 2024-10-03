@@ -8,6 +8,7 @@ using Note_Vie.Application.Common.Dependencies;
 using Note_Vie.Application.Common.Mapping;
 using System.Reflection;
 using Note_Vie.Application.Interfaces;
+using Note_Vie.WebApi.src.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,7 +53,7 @@ using (var scope = builder.Services.BuildServiceProvider().CreateScope())
 
 var app = builder.Build();
 
-
+app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
