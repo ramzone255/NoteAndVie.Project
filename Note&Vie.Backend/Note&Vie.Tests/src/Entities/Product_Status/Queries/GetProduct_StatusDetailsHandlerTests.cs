@@ -11,32 +11,32 @@ using System.Threading.Tasks;
 
 namespace Note_Vie.Tests.src.Entities.Product_Status.Queries
 {
-    [Collection("QueryCollection")]
-    public class GetProduct_StatusDetailsHandlerTests
-    {
-        private readonly Note_VieDbContext Context;
-        private readonly IMapper Mapper;
-
-        public GetProduct_StatusDetailsHandlerTests(QueryTestFixture fixture)
+        [Collection("Product_StatusQueryCollection")]
+        public class GetProduct_StatusDetailsHandlerTests
         {
-            Context = fixture.Context;
-            Mapper = fixture.Mapper;
+            private readonly Note_VieDbContext Context;
+            private readonly IMapper Mapper;
+
+            public GetProduct_StatusDetailsHandlerTests(Product_StatusQueryTestFixture fixture)
+            {
+                Context = fixture.Context;
+                Mapper = fixture.Mapper;
+            }
+
+            [Fact]
+            public async Task GetProduct_StatusDetailsQueryHandler_Success()
+            {
+                var handler = new GetProduct_StatusDetailsHandler(Context, Mapper);
+
+                var result = await handler.Handle(
+                    new GetProduct_StatusDetailsQuery
+                    {
+                        id_product_status = 1
+                    },
+                    CancellationToken.None);
+
+                result.ShouldBeOfType<Product_StatusDetailsVm>();
+                result.product_status_name.ShouldBe("Name1");
+            }
         }
-
-        [Fact]
-        public async Task GetProduct_StatusDetailsQueryHandler_Success()
-        {
-            var handler = new GetProduct_StatusDetailsHandler(Context, Mapper);
-
-            var result = await handler.Handle(
-                new GetProduct_StatusDetailsQuery
-                {
-                    id_product_status = 1
-                },
-                CancellationToken.None);
-
-            result.ShouldBeOfType<Product_StatusDetailsVm>();
-            result.product_status_name.ShouldBe("Name1");
-        }
-    }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Note_Vie.Tests.src.Entities.Product_Status.Commands
 {
-    public class UpdateProduct_StatusCommandHandlerTests : TestCommandBase
+    public class UpdateProduct_StatusCommandHandlerTests : Product_StatusTestCommandBase
     {
         [Fact]
         public async Task UpdateProduct_StatusCommandHandler_Success()

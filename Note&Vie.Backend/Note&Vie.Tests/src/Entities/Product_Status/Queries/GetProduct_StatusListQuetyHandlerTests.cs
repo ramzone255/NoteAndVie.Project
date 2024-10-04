@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Note_Vie.Tests.src.Entities.Product_Status.Queries
 {
-    [Collection("QueryCollection")]
+    [Collection("Product_StatusQueryCollection")]
     public class GetProduct_StatusListQuetyHandlerTests
     {
         private readonly Note_VieDbContext Context;
         private readonly IMapper Mapper;
 
-        public GetProduct_StatusListQuetyHandlerTests(QueryTestFixture fixture)
+        public GetProduct_StatusListQuetyHandlerTests(Product_StatusQueryTestFixture fixture)
         {
             Context = fixture.Context;
             Mapper = fixture.Mapper;
